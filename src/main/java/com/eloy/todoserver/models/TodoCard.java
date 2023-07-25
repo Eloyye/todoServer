@@ -3,18 +3,18 @@ package com.eloy.todoserver.models;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "users")
+@Document(collection = "todo")
 public class TodoCard {
     @Id
     private String id;
-    private String header;
+    private String title;
     private String contents;
 
     private boolean isCompleted;
 
-    public TodoCard(String id, String header, String contents, boolean isCompleted) {
+    public TodoCard(String id, String title, String contents, boolean isCompleted) {
         this.id = id;
-        this.header = header;
+        this.title = title;
         this.contents = contents;
         this.isCompleted = isCompleted;
     }
@@ -27,12 +27,12 @@ public class TodoCard {
         this.id = id;
     }
 
-    public String getHeader() {
-        return header;
+    public String getTitle() {
+        return title;
     }
 
-    public void setHeader(String header) {
-        this.header = header;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getContents() {

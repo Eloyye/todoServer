@@ -35,7 +35,7 @@ public class TodoCardService {
         TodoCard existingTodoCard = todoCardRepository.findById(todoCard.getId())
                 .orElseThrow(() -> new IllegalArgumentException("Todo Card Not Found"));
         existingTodoCard.setContents(todoCard.getContents());
-        existingTodoCard.setHeader(todoCard.getHeader());
+        existingTodoCard.setTitle(todoCard.getTitle());
         existingTodoCard.setCompleted(todoCard.isCompleted());
         return todoCardRepository.save(existingTodoCard);
     }

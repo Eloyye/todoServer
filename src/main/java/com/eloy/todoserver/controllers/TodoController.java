@@ -2,6 +2,7 @@ package com.eloy.todoserver.controllers;
 
 import com.eloy.todoserver.models.TodoCard;
 import com.eloy.todoserver.services.TodoCardService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -39,7 +40,9 @@ public class TodoController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteTodo(@PathVariable String id) {
+    public ResponseEntity<Void> deleteTodo(@PathVariable String id) {
         todoCardService.deleteTodoById(id);
+        return ResponseEntity.noContent().build();
     }
+
 }

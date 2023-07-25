@@ -6,11 +6,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "todo")
 public class TodoCard {
     @Id
-    private String id;
+    private String id = "41h4k";
     private String title;
     private String contents;
 
-    private boolean isCompleted;
+    private boolean isCompleted = false;
 
     public TodoCard(String id, String title, String contents, boolean isCompleted) {
         this.id = id;
